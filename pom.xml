@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.stanstrum</groupId>
+    <artifactId>cisc190</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>lab01</module>
+        <module>lab02</module>
+        <module>lab03</module>
+        <module>lab04</module>
+        <module>lab05</module>
+        <module>lab06</module>
+        <module>lab07</module>
+        <module>project01</module>
+    </modules>
+</project>
