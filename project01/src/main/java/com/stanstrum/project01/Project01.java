@@ -96,5 +96,8 @@ public class Project01 {
 
         // Ending period and newline
         System.out.println(".");
+
+        // Close scanner
+        scanner.close();
     }
 }

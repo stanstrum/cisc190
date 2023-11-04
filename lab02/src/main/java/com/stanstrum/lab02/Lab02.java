@@ -61,5 +61,8 @@ public class Lab02 {
             CENTS_PER_MILE,
             reimbursement
         );
+
+        // Close scanner
+        scanner.close();
     }
 }

@@ -28,6 +28,9 @@ public class Lab03 {
         System.out.print("Enter a number within the range of 1 through 10: ");
         int number = scanner.nextInt();
 
+        // Close scanner -- we are done with it.
+        scanner.close();
+
         // We are storing the representations of the numbers 1-10
         // in Roman numerals in the static array.  This allows us
         // to index by number to get the representation.  Consequently,
