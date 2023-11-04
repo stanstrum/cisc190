@@ -20,10 +20,10 @@ public class Lab02 {
     public static void main(String[] args) {
         // Create stdin scanner
         Scanner scanner = new Scanner(System.in);
-        
+
         // Display program identifier.
         System.out.println("MILEAGE REIMBURSEMENT CALCULATOR");
-        
+
         // Display the query text.  We do not use `println`
         // because we want the cursor to remain on the line
         // that this text appears on.
@@ -37,19 +37,19 @@ public class Lab02 {
          * accordingly).  Afterwards, we use these values for
          * floating-point operations and some inaccuracy is to be
          * expected at that stage anyway.
-         * 
+         *
          * @see java.util.Scanner#nextFloat Refer to `nextFloat`
          * implementation.
          */
         float start_odo = scanner.nextFloat();
-        
+
         // Same song & dance
         System.out.print("Enter ending odometer reading > ");
-        float end_odo = scanner.nextFloat(); 
-        
+        float end_odo = scanner.nextFloat();
+
         float distance_traveled = end_odo - start_odo;
         float reimbursement = distance_traveled * CENTS_PER_MILE;
-        
+
         // While we could use string concatenation or a StringBuilder,
         // I chose `printf` as it is easier to understand precisely
         // what this statement will write to the console.  Add'ly,
