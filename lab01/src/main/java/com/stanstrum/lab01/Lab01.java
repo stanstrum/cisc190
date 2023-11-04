@@ -5,6 +5,9 @@
 
 package com.stanstrum.lab01;
 
+/**
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
+ */
 public class Lab01 {
     public static void main(String[] args) {
         System.out.println("  ****   *****   **  **   *****");

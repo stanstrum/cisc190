@@ -12,7 +12,7 @@ package com.stanstrum.lab02;
 import java.util.Scanner;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab02 {
     public static final float CENTS_PER_MILE = 0.35f;

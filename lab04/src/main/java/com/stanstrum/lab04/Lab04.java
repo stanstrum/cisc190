@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab04 {
     /**

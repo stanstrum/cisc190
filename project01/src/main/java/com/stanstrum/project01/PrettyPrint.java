@@ -6,7 +6,7 @@
 package com.stanstrum.project01;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class PrettyPrint {
    /**
@@ -35,7 +35,7 @@ public class PrettyPrint {
 
    /**
     * Pretty print a large number with commas; e.g.:
-    * 1000000 -> 1,000,000.
+    * 1000000 {@literal ->} 1,000,000.
     *
     * @param num The number to format prettily as a String.
     * @return The prettified number as a String.

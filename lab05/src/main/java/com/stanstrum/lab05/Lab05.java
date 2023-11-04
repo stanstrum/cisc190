@@ -6,7 +6,7 @@
 package com.stanstrum.lab05;
 
 /**
- * @author stanstrum
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab05 {
 	public static void main(String[] args) {

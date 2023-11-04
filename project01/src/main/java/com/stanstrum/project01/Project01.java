@@ -8,7 +8,7 @@ package com.stanstrum.project01;
 import java.util.Scanner;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Project01 {
     public static final int SECONDS_PER_MINUTE = 60;

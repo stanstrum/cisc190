@@ -8,7 +8,7 @@ package com.stanstrum.lab06;
 import java.util.Scanner;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab06 {
   /**

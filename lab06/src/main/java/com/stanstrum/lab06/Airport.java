@@ -155,7 +155,7 @@ public class Airport {
    *
    * <p>
    *   Additionally, this should probably take in two Airport objects
-   *   and calculate the distances using their latitude & longitude
+   *   and calculate the distances using their latitude &amp; longitude
    *   values.  Otherwise, it doesn't make a whole lot of sense
    *   to have this method belong to Airport -- being effectively
    *   invariant to the Airport class altogether.

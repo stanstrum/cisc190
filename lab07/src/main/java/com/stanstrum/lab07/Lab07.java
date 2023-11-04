@@ -6,7 +6,7 @@
 package com.stanstrum.lab07;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab07 {
 	public static class Rainfall {
