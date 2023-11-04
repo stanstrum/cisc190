@@ -1,0 +1,4 @@
+# don't include binaries
+*.class
+*.jar
+*.zip
