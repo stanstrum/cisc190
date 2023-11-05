@@ -60,13 +60,13 @@ public class PrettyPrint {
 				backwards.append(',');
 			}
 
-			// Get the last digit of num
+			// Get the last digit of num.
 			int digit = num % 10;
 
-			// Append it to end of builder
+			// Append it to end of builder.
 			backwards.append(digit);
 
-			// Decimate num
+			// Pop last digit by dividing num by 10.
 			num /= 10;
 		}
 
@@ -76,10 +76,10 @@ public class PrettyPrint {
 			backwards.append('-');
 		}
 
-		// Collect the StringBuilder into a String
+		// Collect the StringBuilder into a String.
 		String backwards_string = backwards.toString();
 
-		// Now reverse the characters
+		// Now reverse the characters.
 		return reverse_string(backwards_string);
 	}
 

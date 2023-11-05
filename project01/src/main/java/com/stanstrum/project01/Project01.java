@@ -1,6 +1,6 @@
 /* Author: Stan Strum (555-010-9379)
  * Date: 1 Nov 2023
- * Description: Project 1: Seconds to Human-Readaable
+ * Description: Project 1: Seconds to Human-Readable
  */
 
 package com.stanstrum.project01;
@@ -16,10 +16,10 @@ public class Project01 {
 	public static final int SECONDS_PER_DAY = 24 * SECONDS_PER_HOUR;
 
 	public static void main(String[] args) {
-		// Create scanner for reading from stdin
+		// Create scanner for reading from stdin.
 		Scanner scanner = new Scanner(System.in);
 
-		// Present prompt, then read int from console
+		// Present prompt, then read int from console.
 		System.out.print("Enter a number of seconds: ");
 		int seconds = scanner.nextInt();
 
@@ -27,10 +27,10 @@ public class Project01 {
 		System.out.print(PrettyPrint.pretty_print_number(seconds));
 		System.out.print(" seconds, which is ");
 
-		// Get rounded-down amount of days by dividing by
+		// Get rounded-down amount of days by dividing by seconds.
 		int days = seconds / SECONDS_PER_DAY;
 
-		// Remove the amount of time we just printed
+		// Remove the amount of time we just printed.
 		seconds %= SECONDS_PER_DAY;
 
 		// Rinse & repeat
@@ -44,17 +44,17 @@ public class Project01 {
 		boolean did_print_any_time = false;
 
 		if (days != 0) {
-			// "day" if only 1, "days" otherwise"
+			// "day" if only 1, "days" otherwise.
 			String pluralized = PrettyPrint.pluralize("day", days);
 
 			// Prints "5 days", for example.
 			System.out.printf("%d %s", days, pluralized);
 
-			// Indicate that something has been printed
+			// Indicate that something has been printed.
 			did_print_any_time = true;
 		}
 
-		// Repeat for hours
+		// Repeat for hours.
 		if (hours != 0) {
 			if (did_print_any_time) {
 				System.out.print(", ");
@@ -67,7 +67,7 @@ public class Project01 {
 			did_print_any_time = true;
 		}
 
-		// Again for minutes
+		// Again for minutes.
 		if (minutes != 0) {
 			if (did_print_any_time) {
 				System.out.print(", ");
@@ -94,10 +94,10 @@ public class Project01 {
 			System.out.printf("%d %s", seconds, pluralized);
 		}
 
-		// Ending period and newline
+		// Ending period and newline.
 		System.out.println(".");
 
-		// Close scanner
+		// Close scanner.
 		scanner.close();
 	}
 }
