@@ -4,7 +4,7 @@ import com.stanstrum.project02.Game;
 
 /**
  * The interface with which the {@link Game} class
- * uses to play the game.  Dependency injection here
+ * uses to play the game.  Polymorphism here
  * makes it so the console player and the CPU player
  * are used the same way in the game logic.
  */
