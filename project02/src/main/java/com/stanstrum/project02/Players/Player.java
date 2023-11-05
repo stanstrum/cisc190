@@ -10,7 +10,7 @@ import com.stanstrum.project02.Game;
  */
 public abstract class Player {
   /**
-   * The amount of points we have.	Each Player
+   * The amount of points we have.  Each Player
    * keeps track of its own points separate from
    * one another.
    */
@@ -32,28 +32,28 @@ public abstract class Player {
    * @return {@link Player#points}
    */
   public final int getPoints() {
-	return this.points;
+    return this.points;
   }
 
   /**
    * @return {@link Player#name}
    */
   public final String getName() {
-	return this.name;
+    return this.name;
   }
 
   /**
    * @return {@link Player#isPlaying}
    */
   public final boolean getIsPlaying() {
-	return this.isPlaying;
+    return this.isPlaying;
   }
 
   /**
    * @param isPlaying The value to set to {@link Player#isPlaying}.
    */
   public final void setIsPlaying(boolean isPlaying) {
-	this.isPlaying = isPlaying;
+    this.isPlaying = isPlaying;
   }
 
   /**
@@ -61,7 +61,7 @@ public abstract class Player {
    * the amount of points gained from a dice roll.
    */
   public final void addPoints(int amount) {
-	this.points += amount;
+    this.points += amount;
   }
 
   /**
@@ -101,6 +101,6 @@ public abstract class Player {
    * @param name Name of this player.
    */
   public Player(String name) {
-	this.name = name;
+    this.name = name;
   }
 }

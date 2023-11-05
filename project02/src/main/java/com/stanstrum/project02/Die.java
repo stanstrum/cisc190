@@ -18,42 +18,42 @@ public class Die {
   private final Dice[] die;
 
   private static final class Dice {
-	/**
-	 * The amount of sides on this dice.
-	 * This is used to compute the value of
-	 * a dice roll.
-	 */
-	private final int sides;
+    /**
+     * The amount of sides on this dice.
+     * This is used to compute the value of
+     * a dice roll.
+     */
+    private final int sides;
 
-	/**
-	 * The current value of the dice roll.
-	 *
-	 * @note This value will only be zero if
-	 * the dice has never been rolled.
-	 */
-	private int value = 0;
+    /**
+     * The current value of the dice roll.
+     *
+     * @note This value will only be zero if
+     * the dice has never been rolled.
+     */
+    private int value = 0;
 
-	/**
-	 * @return {@link Dice#value}
-	 */
-	public int getValue() {
-	  return this.value;
-	}
+    /**
+     * @return {@link Dice#value}
+     */
+    public int getValue() {
+      return this.value;
+    }
 
-	/**
-	 * Roll the dice.  This method will set {@link Dice#value}
-	 * to a value between 1 and {@link Dice#sides}, inclusive.
-	 *
-	 * @note This does not clear {@link Dice#value} first because
-	 * it overwrites it anyway.
-	 */
-	public void roll() {
-	  this.value = (int)(Math.random() * (double)this.sides) + 1;
-	}
+    /**
+     * Roll the dice.  This method will set {@link Dice#value}
+     * to a value between 1 and {@link Dice#sides}, inclusive.
+     *
+     * @note This does not clear {@link Dice#value} first because
+     * it overwrites it anyway.
+     */
+    public void roll() {
+      this.value = (int)(Math.random() * (double)this.sides) + 1;
+    }
 
-	public Dice(int sides) {
-	  this.sides = sides;
-	}
+    public Dice(int sides) {
+      this.sides = sides;
+    }
   }
 
   /**
@@ -64,13 +64,13 @@ public class Die {
    * been rolled.
    */
   public int getValue() {
-	int value = 0;
+    int value = 0;
 
-	for (Dice dice : this.die) {
-	  value += dice.getValue();
-	}
+    for (Dice dice : this.die) {
+      value += dice.getValue();
+    }
 
-	return value;
+    return value;
   }
 
   /**
@@ -80,9 +80,9 @@ public class Die {
    * of our die because they are overwritten anyway.
    */
   public void roll() {
-	for (Dice dice : this.die) {
-	  dice.roll();
-	}
+    for (Dice dice : this.die) {
+      dice.roll();
+    }
   }
 
   /**
@@ -96,8 +96,8 @@ public class Die {
    * doing.
    */
   public Die(int amount, int sides) {
-	this.die = new Dice[amount];
+    this.die = new Dice[amount];
 
-	Arrays.fill(this.die, new Dice(sides));
+    Arrays.fill(this.die, new Dice(sides));
   }
 }
