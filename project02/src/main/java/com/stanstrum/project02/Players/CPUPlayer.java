@@ -19,34 +19,34 @@ public final class CPUPlayer extends Player {
   private static final int BACK_OFF_POINT = Game.HIGHEST_SCORE - (Game.DIE * Game.SIDES_PER_DICE + 1) / 2;
 
   public void play() {
-    if (this.points >= CPUPlayer.BACK_OFF_POINT) {
-      this.isPlaying = false;
-    }
+	if (this.points >= CPUPlayer.BACK_OFF_POINT) {
+	  this.isPlaying = false;
+	}
   }
 
   public void informWon() {
-    // No need to do anything here since ConsolePlayer's
-    // `informLose` shows the winner's score.
+	// No need to do anything here since ConsolePlayer's
+	// `informLose` shows the winner's score.
   }
 
   public void informLost(Player winner) {
-    // The assignment details specify:
-    // "After the loop has finished, the computer's total is revealed."
+	// The assignment details specify:
+	// "After the loop has finished, the computer's total is revealed."
 
-    // Check if CPU busted.
-    if (this.points > Game.HIGHEST_SCORE) {
-      System.out.printf("CPU busted with %d points.\n", this.points);
-    } else {
-      System.out.printf("CPU lost with %d points.\n", this.points);
-    }
+	// Check if CPU busted.
+	if (this.points > Game.HIGHEST_SCORE) {
+	  System.out.printf("CPU busted with %d points.\n", this.points);
+	} else {
+	  System.out.printf("CPU lost with %d points.\n", this.points);
+	}
   }
 
   public void informTied() {
-    // Don't print info since the ConsolePlayer can
-    // infer our score as they had the same one.
+	// Don't print info since the ConsolePlayer can
+	// infer our score as they had the same one.
   }
 
   public CPUPlayer() {
-    super("CPU");
+	super("CPU");
   }
 }
