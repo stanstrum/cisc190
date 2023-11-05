@@ -1,6 +1,6 @@
 /* Author: Stan Strum (555-010-9379)
  * Date: 1 Nov 2023
- * Description: Project 1: Seconds to Human-Readaable
+ * Description: Project 1: Seconds to Human-Readable
  */
 
 package com.stanstrum.project01;

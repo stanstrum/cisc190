@@ -5,18 +5,16 @@
 	<artifactId>cisc190</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-
 	<reporting>
 		<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-javadoc-plugin</artifactId>
-			<version>3.6.0</version>
-			<configuration></configuration>
-		</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration></configuration>
+			</plugin>
 		</plugins>
 	</reporting>
-
 	<modules>
 		<module>lab01</module>
 		<module>lab02</module>
