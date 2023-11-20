@@ -63,7 +63,7 @@ public class Rainfall {
 	 * @return The average amount of rainfall per month stored in this object.
 	 */
 	public double getAverageRainfall() {
-		return this.getTotalRainfall() / 12d;
+		return this.getTotalRainfall() / (double)Rainfall.MONTHS;
 	}
 
 	/**
