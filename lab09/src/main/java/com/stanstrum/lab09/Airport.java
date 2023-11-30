@@ -84,7 +84,7 @@ public class Airport {
 	}
 
 	/**
-	 * @param identifier The value to set to {@link Airport#identifier}
+	 * @param identifier The value to set to {@link Airport#identifier}.
 	 */
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
@@ -98,7 +98,7 @@ public class Airport {
 	}
 
 	/**
-	 * @param latitude The value to set to {@link Airport#latitude}
+	 * @param latitude The value to set to {@link Airport#latitude}.
 	 */
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
@@ -112,7 +112,7 @@ public class Airport {
 	}
 
 	/**
-	 * @param longitude The value to set to {@link Airport#longitude}
+	 * @param longitude The value to set to {@link Airport#longitude}.
 	 */
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
@@ -126,7 +126,7 @@ public class Airport {
 	}
 
 	/**
-	 * @param magneticVariation The value to set to {@link Airport#magneticVariation}
+	 * @param magneticVariation The value to set to {@link Airport#magneticVariation}.
 	 */
 	public void setMagneticVariation(float magneticVariation) {
 		this.magneticVariation = magneticVariation;
@@ -140,7 +140,7 @@ public class Airport {
 	}
 
 	/**
-	 * @param elevation The value to set to {@link Airport#elevation}
+	 * @param elevation The value to set to {@link Airport#elevation}.
 	 */
 	public void setElevation(float elevation) {
 		this.elevation = elevation;
@@ -191,7 +191,7 @@ public class Airport {
 	 * used by instances of {@link Airport} to calculate their distance from another
 	 * {@link Airport} instance.
 	 *
-	 * @param other The other {@link Airport} to calculate the distance from
+	 * @param other The other {@link Airport} to calculate the distance from.
 	 *
 	 * @return The distance between the airports.
 	 *

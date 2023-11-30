@@ -13,17 +13,17 @@ public class Lab09 {
 		// These values were provided in the details of the assignment.
 		Airport sanDiego = new Airport();
 
-		// San Diego International
+		// San Diego International.
 		sanDiego.setIdentifier("KSAN");
 		sanDiego.setLatitude(32.7335556d);
 		sanDiego.setLongitude(-117.1896667d);
 		sanDiego.setMagneticVariation(14f);
 		sanDiego.setElevation(16.8f);
 
-		// The following values are from <www.gcmap.com>
+		// The following values are from <www.gcmap.com>.
 		Airport dallas = new Airport();
 
-		// Dallas Fort Worth
+		// Dallas Fort Worth.
 		dallas.setIdentifier("KDFW");
 		dallas.setLatitude(32.896233d);
 		dallas.setLongitude(-97.037694d);
@@ -95,12 +95,12 @@ public class Lab09 {
 		double absoluteLatitude = Math.abs(airport.getLatitude());
 		double absoluteLongitude = Math.abs(airport.getLongitude());
 
-		// Do the same for magnetic variation
+		// Do the same for magnetic variation.
 		char magneticVariationHemisphere = airport.getMagneticVariation() >= 0 ? 'E' : 'W';
 
 		float absoluteMagneticVariation = Math.abs(airport.getMagneticVariation());
 
-		// Dump information about airport to demonstrate functionality
+		// Dump information about airport to demonstrate functionality.
 		System.out.println("Latitude: " + absoluteLatitude + "°" + latitudeHemisphere);
 		System.out.println("Longitude: " + absoluteLongitude + "°" + longitudeHemisphere);
 
