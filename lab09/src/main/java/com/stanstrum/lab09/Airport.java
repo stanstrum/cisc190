@@ -54,6 +54,29 @@ public class Airport {
 	private float elevation;
 
 	/**
+	 * Constructor for {@link Airport}.  Defaults
+	 * all field values to zeroes and empty strings.
+	 */
+	public Airport() {
+		// This stub method was not necessary when
+		// the class had no overloaded constructors
+		// since Java auto-implements a no-op constructor
+		// when none are specified.
+	}
+
+	/**
+	 * Overload for {@link Airport#Airport()} that takes coordinates
+	 * as arguments.
+	 *
+	 * @param latitude The latitude in degrees of the airport.
+	 * @param longitude The longitude in degrees of the airport.
+	 */
+	public Airport(double latitude, double longitude) {
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+	/**
 	 * @return {@link Airport#identifier}
 	 */
 	public String getIdentifier() {
