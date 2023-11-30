@@ -30,23 +30,40 @@ public class Lab09 {
 		dallas.setMagneticVariation(2.85f);
 		dallas.setElevation(606f);
 
-		Airport london = new Airport();
-
-		// London Heathrow
-		london.setIdentifier("EGLL");
-		london.setLatitude(51.4775d);
-		london.setLongitude(-0.461388d);
-		london.setMagneticVariation(0.68f);
-		london.setElevation(83f);
-
+		// Dump out the airport information.
 		System.out.println("San Diego airport:");
-		doThingsWithAirport(sanDiego);
+		dumpAiportInfo(sanDiego);
 
 		System.out.println("Dallas airport:");
-		doThingsWithAirport(dallas);
+		dumpAiportInfo(dallas);
 
-		System.out.println("London airport:");
-		doThingsWithAirport(london);
+		// Calculate distances using different overloads.
+		double sanDiegoToDallasStatic = Airport.calcDistance(
+			sanDiego.getLatitude(),
+			sanDiego.getLongitude(),
+			dallas.getLatitude(),
+			dallas.getLongitude()
+		);
+
+		double sanDiegoToDallasInstanceCoords = sanDiego.calcDistance(
+			dallas.getLatitude(),
+			dallas.getLongitude()
+		);
+
+		double sanDiegoToDallasInstanceComparison = sanDiego.calcDistance(dallas);
+
+		// Assert that these values are the same.
+		assert
+			(sanDiegoToDallasStatic == sanDiegoToDallasInstanceCoords) &&
+			(sanDiegoToDallasInstanceCoords == sanDiegoToDallasInstanceComparison) :
+			"Distances differ by invocation";
+
+		// Show that we reached this point in the code -- that
+		// the assertion passed.
+		System.out.println("Calculated distance betwenn San Diego International Airport and Dallas Fort Worth International Airport:");
+		System.out.printf("- %.2f nautical mile(s) using static Airport#calcDistance(double, double, double, double)\n", sanDiegoToDallasStatic);
+		System.out.printf("- %.2f nautical mile(s) using instance Airport#calcDistance(double, double)\n", sanDiegoToDallasStatic);
+		System.out.printf("- %.2f nautical mile(s) using instance Airport#calcDistance(Airport)\n", sanDiegoToDallasStatic);
 
 		// No need to destroy these objects as they are
 		// cleanly handled by the garbage collector.
@@ -58,7 +75,7 @@ public class Lab09 {
 	 *
 	 * @param airport The {@link Airport} instance to dump.
 	 */
-	private static void doThingsWithAirport(Airport airport) {
+	private static void dumpAiportInfo(Airport airport) {
 		// Rather than throwing an error, just show a message
 		// in the case that we have a null Airport
 		if (airport == null) {
