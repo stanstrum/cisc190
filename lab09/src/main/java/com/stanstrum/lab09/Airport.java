@@ -185,4 +185,34 @@ public class Airport {
 		// "... should return the distance in nautical miles ..."
 		return distance;
 	}
+
+	/**
+	 * An overload for {@link Airport#calcDistance(double, double, double, double)} to be
+	 * used by instances of {@link Airport} to calculate their distance from another
+	 * {@link Airport} instance.
+	 *
+	 * @param other The other {@link Airport} to calculate the distance from
+	 * @return The distance between the airports.
+	 *
+	 * @see {@link Airport#calcDistance(double, double, double, double)} for more information.
+	 */
+	public double calcDistance(Airport other) {
+		return Airport.calcDistance(this.latitude, this.longitude, other.latitude, other.longitude);
+	}
+
+	/**
+	 * An overload for {@link Airport#calcDistance(double, double, double, double)} to be used
+	 * by instances of {@link Airport} to calculate their distance from a pair of
+	 * latitude/longitude coordinates.
+	 *
+	 * @param otherLatitude The other latitude to calculate the distance from.
+	 * @param otherLongitude The other longitude to calculate the distance from.
+	 *
+	 * @return The distance between this {@link Airport} and the provided coordinates.
+	 *
+	 * @see {@link Airport#calcDistance(double, double, double, double)} for more information.
+	 */
+	public double calcDistance(double otherLatitude, double otherLongitude) {
+		return Airport.calcDistance(this.latitude, this.longitude, otherLatitude, otherLongitude);
+	}
 }
