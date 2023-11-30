@@ -145,4 +145,75 @@ public class Airport {
 	public void setElevation(float elevation) {
 		this.elevation = elevation;
 	}
+
+	/**
+	 * From assignment details:
+	 * "The radius of the earth is a constant and its value in radians is r = 10800 / PI".
+	 *
+	 * <p>
+	 *   Note: this is not correct for two reasons:
+	 * </p>
+	 *
+	 * <ol>
+	 *   <li>
+	 *     Earth's radius is not the same at all points on the surface.
+	 *     It is most analogous to an ellipsoid, which has a variable radius
+	 *     depending on the point on the surface being measured.
+	 *   </li>
+	 *   <li>
+	 *     A circle's radius is always one radian, since that is what
+	 *     a radian means.  This value approximately equals 3437.74, which is an
+	 *     approximation of the Earth's radius in nautical miles.
+	 *   </li>
+	 * </ol>
+	 */
+	public static double EARTH_RADIUS = 10800 / Math.PI;
+
+	/**
+	 * Approximates the distance between a two pairs of lat/long
+	 * coordinates using a Great-Circle distance formula.
+	 *
+	 * <p>
+	 *   Note: Earth is not a perfect sphere.  Use an ellipsoid arclength
+	 *   function that utilizes the polar radii to calculate a more precise distance.
+	 * </p>
+	 *
+	 * <p>
+	 *   Additionally, this should probably take in two Airport objects
+	 *   and calculate the distances using their latitude &amp; longitude
+	 *   values.  Otherwise, it doesn't make a whole lot of sense
+	 *   to have this method belong to Airport -- being effectively
+	 *   invariant to the Airport class altogether.
+	 * </p>
+	 *
+	 * @param latOrigin Latitude (in degrees) of the origin point.
+	 * @param longOrigin Longitude (in degrees) of the origin point.
+	 * @param latDestin Latitude (in degrees) of the destination point.
+	 * @param longDestin Longitude (in degrees) of the destination point.
+	 *
+	 * @return The distance between these points in nautical miles.
+	 */
+	public static double calcDistance(double latOrigin, double longOrigin, double latDestin, double longDestin) {
+		// "Because the coordinates on earth are given in degrees,
+		// you need to convert the degrees into radians by multiplying
+		// the degrees * PI / 180."
+		double latOriginRad = (latOrigin * Math.PI) / 180;
+		double longOriginRad = (longOrigin * Math.PI) / 180;
+
+		double latDestinRad = (latDestin * Math.PI) / 180;
+		double longDestinRad = (longDestin * Math.PI) / 180;
+
+		// "DeltaAngle = acos(sin(Lat1) * sin(Lat2) + cos(Lat1) * cos(Lat2) * cos(Long1 – Long2))"
+		double deltaAngle = Math.acos(
+			Math.sin(latOriginRad) * Math.sin(latDestinRad) +
+			Math.cos(latOriginRad) * Math.cos(latDestinRad) * Math.cos(longOriginRad - longDestinRad)
+		);
+
+		// "Distance = Radius * DeltaAngle" -- Distance here is actually
+		// in nautical miles due to the EARTH_RADIUS constant.
+		double distance = Airport.EARTH_RADIUS * deltaAngle;
+
+		// "... should return the distance in nautical miles ..."
+		return distance;
+	}
 }
