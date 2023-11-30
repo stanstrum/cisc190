@@ -192,6 +192,7 @@ public class Airport {
 	 * {@link Airport} instance.
 	 *
 	 * @param other The other {@link Airport} to calculate the distance from
+	 *
 	 * @return The distance between the airports.
 	 *
 	 * @see {@link Airport#calcDistance(double, double, double, double)} for more information.
