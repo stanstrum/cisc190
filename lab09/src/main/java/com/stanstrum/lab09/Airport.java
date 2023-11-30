@@ -147,44 +147,13 @@ public class Airport {
 	}
 
 	/**
-	 * From assignment details:
-	 * "The radius of the earth is a constant and its value in radians is r = 10800 / PI".
-	 *
-	 * <p>
-	 *   Note: this is not correct for two reasons:
-	 * </p>
-	 *
-	 * <ol>
-	 *   <li>
-	 *     Earth's radius is not the same at all points on the surface.
-	 *     It is most analogous to an ellipsoid, which has a variable radius
-	 *     depending on the point on the surface being measured.
-	 *   </li>
-	 *   <li>
-	 *     A circle's radius is always one radian, since that is what
-	 *     a radian means.  This value approximately equals 3437.74, which is an
-	 *     approximation of the Earth's radius in nautical miles.
-	 *   </li>
-	 * </ol>
+	 * An approximation of Earth's radius in nautical miles.
 	 */
 	public static double EARTH_RADIUS = 10800 / Math.PI;
 
 	/**
 	 * Approximates the distance between a two pairs of lat/long
 	 * coordinates using a Great-Circle distance formula.
-	 *
-	 * <p>
-	 *   Note: Earth is not a perfect sphere.  Use an ellipsoid arclength
-	 *   function that utilizes the polar radii to calculate a more precise distance.
-	 * </p>
-	 *
-	 * <p>
-	 *   Additionally, this should probably take in two Airport objects
-	 *   and calculate the distances using their latitude &amp; longitude
-	 *   values.  Otherwise, it doesn't make a whole lot of sense
-	 *   to have this method belong to Airport -- being effectively
-	 *   invariant to the Airport class altogether.
-	 * </p>
 	 *
 	 * @param latOrigin Latitude (in degrees) of the origin point.
 	 * @param longOrigin Longitude (in degrees) of the origin point.
@@ -209,7 +178,7 @@ public class Airport {
 			Math.cos(latOriginRad) * Math.cos(latDestinRad) * Math.cos(longOriginRad - longDestinRad)
 		);
 
-		// "Distance = Radius * DeltaAngle" -- Distance here is actually
+		// "Distance = Radius * DeltaAngle" -- Distance here is
 		// in nautical miles due to the EARTH_RADIUS constant.
 		double distance = Airport.EARTH_RADIUS * deltaAngle;
 
