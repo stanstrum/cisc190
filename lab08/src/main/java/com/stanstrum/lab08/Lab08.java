@@ -9,6 +9,8 @@ import java.util.stream.Stream;
 import java.util.stream.Collectors;
 
 /**
+ * The main class for Lab08.
+ *
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab08 {

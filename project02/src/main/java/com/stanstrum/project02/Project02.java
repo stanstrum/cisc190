@@ -9,7 +9,7 @@ import java.util.Scanner;
 import com.stanstrum.project02.Players.*;
 
 /**
- * @author Stan Strum <stanleystrum@gmail.com>
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Project02 {
 	public static void main(String[] args) {
