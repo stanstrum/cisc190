@@ -29,21 +29,27 @@ public class Airport {
 	private double longitude;
 
 	/**
-	 * Magnetic variation represented in degrees east.
-	 * A negative value here represents degrees west.
-	 * A zero value here means no magnetic variation.
-	 *
-	 * @note Using a float here since it seems that
-	 * magnetic variation is not often measured to
-	 * extreme precision.
+	 * <p>
+	 *   Magnetic variation represented in degrees east.
+	 *   A negative value here represents degrees west.
+	 *   A zero value here means no magnetic variation.
+	 * </p>
+	 * <p>
+	 *   Note: using a float here since it seems that
+	 *   magnetic variation is not often measured to
+	 *   extreme precision.
+	 * </p>
 	 */
 	private float magneticVariation;
 
 	/**
-	 * Elevation of airport in feet.
-	 *
-	 * @note This field represents the MSL (Mean Sea Level)
-	 * elevation of the airport.
+	 * <p>
+	 *   Elevation of airport in feet.
+	 * </p>
+	 * <p>
+	 *   Note: this field represents the MSL (Mean Sea Level)
+	 *   elevation of the airport.
+	 * </p>
 	 */
 	private float elevation;
 
