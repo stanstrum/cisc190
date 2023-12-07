@@ -1,9 +1,4 @@
-/* Author: Stan Strum (555-010-9379)
- * Date: 29 Nov 2023
- * Description: Lab 9: Airport Class with Overloaded Constructor
- */
-
-package com.stanstrum.lab09;
+package com.stanstrum.project03;
 
 /**
  * An object to represent a physical airport and some
