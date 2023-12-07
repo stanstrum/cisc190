@@ -3,6 +3,8 @@ package com.stanstrum.project03;
 /**
  * An object to represent a physical airport and some
  * of its most important attributes.
+ *
+ * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Airport {
 	/**

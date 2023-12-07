@@ -78,10 +78,19 @@ public class PrettyPrint {
 		return reverseString(backwardsString);
 	}
 
+	// Self-explanatory.
 	public static final int SECONDS_PER_MINUTE = 60;
 	public static final int SECONDS_PER_HOUR = 60 * SECONDS_PER_MINUTE;
 	public static final int SECONDS_PER_DAY = 24 * SECONDS_PER_HOUR;
 
+	/**
+	 * Pretty prints an amount of time into a compact,
+	 * human-readable form.
+	 *
+	 * @param seconds The amount of time in seconds.
+	 *
+	 * @return The time in a human-readable format.
+	 */
 	public static String prettyPrintTime(int seconds) {
 		StringBuilder builder = new StringBuilder();
 
@@ -122,6 +131,7 @@ public class PrettyPrint {
 			builder.append("s");
 		}
 
+		// Collect the builder.
 		return builder.toString();
 	}
 }
