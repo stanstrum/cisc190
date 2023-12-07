@@ -11,13 +11,30 @@ import java.util.Iterator;
 public class Resources {
   private static HashMap<String, Airport> airports = null;
 
-  public static void load() throws Exception {
+  private static String htmlHead = null;
+  private static String htmlListItem = null;
+  private static String htmlFoot = null;
+
+	public static void load() throws Exception {
     Resources.loadAirports();
+    Resources.loadHtml();
   }
 
   public static Airport getAirport(String identifier) {
     return Resources.airports.get(identifier.toLowerCase());
   }
+
+  public static String getHtmlHead() {
+		return htmlHead;
+	}
+
+	public static String getHtmlListItem() {
+		return htmlListItem;
+	}
+
+	public static String getHtmlFoot() {
+		return htmlFoot;
+	}
 
   private static void loadAirports() throws Exception {
     // Load resources/airport.json into a JSONObject.
@@ -52,3 +69,13 @@ public class Resources {
     // Now we have a usable Airport map.
   }
 
+  private static void loadHtml() throws Exception {
+    String head = IOUtils.resourceToString("/html_head.html", StandardCharsets.UTF_8);
+    String listItem = IOUtils.resourceToString("/html_list_item.html", StandardCharsets.UTF_8);
+    String foot = IOUtils.resourceToString("/html_foot.html", StandardCharsets.UTF_8);
+
+    Resources.htmlHead = head;
+    Resources.htmlListItem = listItem;
+    Resources.htmlFoot = foot;
+  }
+}
