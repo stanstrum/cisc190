@@ -13,6 +13,8 @@ import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import com.stanstrum.project03.PrettyPrint;
+
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
@@ -94,7 +96,7 @@ public class Project03 {
 				double distance = leg.getDistance();
 
 				String formattedTime = String.format("%.0f", time);
-				String formattedDistance = String.format("%.0f", distance);
+				String formattedDistance = PrettyPrint.prettyPrintNumber((int)distance);
 
 				String listItem = Resources.getHtmlListItem()
 					.replace("%legNum", legNum)
