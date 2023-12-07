@@ -1,12 +1,12 @@
 package com.stanstrum.project03;
 
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-
-import org.apache.commons.io.IOUtils;
-import org.json.JSONObject;
-
 import java.util.Iterator;
+
+import java.nio.charset.StandardCharsets;
+import org.apache.commons.io.IOUtils;
+
+import org.json.JSONObject;
 
 public class Resources {
   private static HashMap<String, Airport> airports = null;

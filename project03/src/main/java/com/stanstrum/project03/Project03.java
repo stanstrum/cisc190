@@ -4,10 +4,14 @@
  */
 package com.stanstrum.project03;
 
-import java.util.Scanner;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import java.util.Scanner;
+import java.io.FileWriter;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
