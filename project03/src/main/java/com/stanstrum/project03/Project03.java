@@ -77,7 +77,7 @@ public class Project03 {
 
 		int legCount = 0;
 		do {
-			System.out.print("How many legs does your itineray have? ");
+			System.out.print("How many legs does your itinerary have? ");
 
 			try {
 				// nextInt will crash if an invalid value is provided.
