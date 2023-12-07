@@ -163,7 +163,7 @@ public class Airport {
 	/**
 	 * An approximation of Earth's radius in nautical miles.
 	 */
-	public static double EARTH_RADIUS = 10800 / Math.PI;
+	public static double EARTH_RADIUS = 3443.9308855292d;
 
 	/**
 	 * Approximates the distance between a two pairs of lat/long
@@ -180,11 +180,11 @@ public class Airport {
 		// "Because the coordinates on earth are given in degrees,
 		// you need to convert the degrees into radians by multiplying
 		// the degrees * PI / 180."
-		double latOriginRad = (latOrigin * Math.PI) / 180;
-		double longOriginRad = (longOrigin * Math.PI) / 180;
+		double latOriginRad = (latOrigin * Math.PI) / 180d;
+		double longOriginRad = (longOrigin * Math.PI) / 180d;
 
-		double latDestinRad = (latDestin * Math.PI) / 180;
-		double longDestinRad = (longDestin * Math.PI) / 180;
+		double latDestinRad = (latDestin * Math.PI) / 180d;
+		double longDestinRad = (longDestin * Math.PI) / 180d;
 
 		// "DeltaAngle = acos(sin(Lat1) * sin(Lat2) + cos(Lat1) * cos(Lat2) * cos(Long1 – Long2))"
 		double deltaAngle = Math.acos(
