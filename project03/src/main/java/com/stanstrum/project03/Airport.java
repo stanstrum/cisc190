@@ -12,6 +12,11 @@ public class Airport {
 	private String identifier;
 
 	/**
+	 * The human-readable name for this airport.
+	 */
+	private String name;
+
+	/**
 	 * Latitude represented in degrees north.
 	 * A negative value here represents degrees south.
 	 */
@@ -69,6 +74,20 @@ public class Airport {
 	public Airport(double latitude, double longitude) {
 		this.latitude = latitude;
 		this.longitude = longitude;
+	}
+
+	/**
+	 * @return {@link Airport#name}
+	 */
+	public String getName() {
+		return this.name;
+	}
+
+	/**
+	 * @param name The value to set to {@link Airport#name}.
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
