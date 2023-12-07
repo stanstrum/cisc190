@@ -1,21 +1,16 @@
-/* Author: Stan Strum (555-010-9379)
- * Date: 1 Nov 2023
- * Description: Project 1: Seconds to Human-Readable
- */
-
-package com.stanstrum.project01;
+package com.stanstrum.project03;
 
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class PrettyPrint {
-   /**
-	* Reverse a string using a basic swap algorithm.
-	*
-	* @param str The string to reverse.
-	* @return The string, reversed.
-	*/
-   public static String reverse_string(String str) {
+	/**
+	 * Reverse a string using a basic swap algorithm.
+	 *
+	 * @param str The string to reverse.
+	 * @return The string, reversed.
+	 */
+	public static String reverse_string(String str) {
 		final int last_idx = str.length() - 1;
 		final int halfway = str.length() / 2;
 
@@ -33,14 +28,14 @@ public class PrettyPrint {
 		return new String(char_arr);
 	}
 
-   /**
-	* Pretty print a large number with commas; e.g.:
-	* 1000000 {@literal ->} 1,000,000.
-	*
-	* @param num The number to format prettily as a String.
-	* @return The prettified number as a String.
-	*/
-   public static String pretty_print_number(int num) {
+	/**
+	 * Pretty print a large number with commas; e.g.:
+	 * 1000000 {@literal ->} 1,000,000.
+	 *
+	 * @param num The number to format prettily as a String.
+	 * @return The prettified number as a String.
+	 */
+	public static String pretty_print_number(int num) {
 		if (num == 0) {
 			return "0";
 		}
@@ -81,14 +76,5 @@ public class PrettyPrint {
 
 		// Now reverse the characters.
 		return reverse_string(backwards_string);
-	}
-
-	public static String pluralize(String noun, int amount) {
-		// Naive but works for this specific situation.
-		if (amount == 1) {
-			return noun;
-		} else {
-			return noun + "s";
-		}
 	}
 }
