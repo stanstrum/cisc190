@@ -16,7 +16,7 @@ public class Resources {
   }
 
   public static Airport getAirport(String identifier) {
-    return Resources.airports.get(identifier);
+    return Resources.airports.get(identifier.toLowerCase());
   }
 
   private static void loadAirports() throws Exception {
@@ -38,7 +38,7 @@ public class Resources {
       Airport airport = new Airport(latitude, longitude);
       airport.setIdentifier(key);
 
-      Resources.airports.put(key, airport);
+      Resources.airports.put(key.toLowerCase(), airport);
     }
   }
 }
