@@ -8,12 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import java.util.Scanner;
-import java.io.FileWriter;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-import com.stanstrum.project03.PrettyPrint;
 
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
@@ -34,100 +28,6 @@ public class Project03 {
 		} while (airport == null);
 
 		return airport;
-	}
-
-	private static final double KNOTS_PER_HOUR = 300d;
-	private static final int MINUTES_PER_HOUR = 60;
-
-	private static void dumpInfo(List<Leg> legs) {
-		System.out.println("Leg\tFrom\tTo\tDist\tTime (mins)");
-
-		double totalDistance = 0d;
-		double totalTimeMins = 0d;
-		for (int i = 0; i < legs.size(); i++) {
-			Leg leg = legs.get(i);
-
-			Airport departure = leg.getDepartureAirport();
-			Airport arrival = leg.getArrivalAirport();
-			double distance = leg.getDistance();
-
-			double timeMins = distance / KNOTS_PER_HOUR * (double)MINUTES_PER_HOUR;
-
-			System.out.printf(
-				"%d\t%s\t%s\t%.0f\t%.0f\n",
-				i + 1,
-				departure.getIdentifier(), arrival.getIdentifier(), distance, timeMins
-			);
-
-			totalDistance += distance;
-			totalTimeMins += timeMins;
-		}
-
-		System.out.printf("Total\t\t\t%.0f\t%.0f\n", totalDistance, totalTimeMins);
-	}
-
-	private static void dumpInfoHTML(List<Leg> legs) {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("mm LLLL yyyy");
-		String date = dtf.format(LocalDateTime.now());
-
-		double totalDistance = 0d;
-		double totalTime = 0d;
-
-		String head = Resources.getHtmlHead()
-			.replace("%date", date);
-
-		try (FileWriter outputFile = new FileWriter("itinerary.html")) {
-			outputFile.write(head);
-
-			for (int i = 0; i < legs.size(); i++) {
-				Leg leg = legs.get(i);
-
-				String legNum = Integer.toString(i + 1);
-
-				Airport departureAirport = leg.getDepartureAirport();
-				Airport arrivalAirport = leg.getArrivalAirport();
-
-				String departureIdentifier = departureAirport.getIdentifier();
-				String arrivalIdentifier = arrivalAirport.getIdentifier();
-				String departureName = departureAirport.getName();
-				String arrivalName = arrivalAirport.getName();
-
-				double time = leg.getDistance() / KNOTS_PER_HOUR * (double)MINUTES_PER_HOUR;
-				double distance = leg.getDistance();
-
-				String formattedTime = String.format("%.0f", time);
-				String formattedDistance = PrettyPrint.prettyPrintNumber((int)distance);
-
-				String listItem = Resources.getHtmlListItem()
-					.replace("%legNum", legNum)
-					.replace("%departureIdentifier", departureIdentifier)
-					.replace("%arrivalIdentifier", arrivalIdentifier)
-					.replace("%departureName", departureName)
-					.replace("%arrivalName", arrivalName)
-					.replace("%formattedTime", formattedTime)
-					.replace("%distance", formattedDistance);
-
-				outputFile.write(listItem);
-
-				totalDistance += distance;
-				totalTime += time;
-			}
-
-			Leg first = legs.get(0);
-			Leg last = legs.get(legs.size() - 1);
-
-			String foot = Resources.getHtmlFoot()
-				.replace("%totalTime", String.format("%.0f", totalTime))
-				.replace("%start", first.getDepartureAirport().getName())
-				.replace("%end", last.getArrivalAirport().getName())
-				.replace("%totalDistance", String.format("%.0f", totalDistance));
-
-			outputFile.write(foot);
-
-			outputFile.close();
-		} catch (Exception e) {
-			System.err.println("Failed to generate itinerary file: " + e);
-		}
 	}
 
 	public static void main(String[] args) {
@@ -179,8 +79,8 @@ public class Project03 {
 			departureAirport = arrivalAirport;
 		}
 
-		dumpInfo(legs);
-		dumpInfoHTML(legs);
+		Dump.dumpInfo(legs);
+		Dump.dumpInfoHTML(legs);
 
 		scanner.close();
 	}
