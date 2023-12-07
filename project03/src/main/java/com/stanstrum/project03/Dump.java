@@ -39,7 +39,7 @@ public class Dump {
 	}
 
 	public static void dumpInfoHTML(List<Leg> legs) {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("mm LLLL yyyy");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd LLLL yyyy");
 		String date = dtf.format(LocalDateTime.now());
 
 		double totalDistance = 0d;
