@@ -143,6 +143,9 @@ public class Dump {
 			// Write the filled-out foot.
 			outputFile.write(foot);
 
+			// Inform the user that the file was written.
+			System.out.println("An itinerary.html has been saved in the working directory.");
+
 			// Don't leak.
 			outputFile.close();
 		} catch (Exception e) {
