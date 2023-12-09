@@ -3,9 +3,8 @@ package com.stanstrum.project03.Dump;
 import java.util.List;
 
 import com.stanstrum.project03.Airport;
+import com.stanstrum.project03.Constants;
 import com.stanstrum.project03.Leg;
-
-import com.stanstrum.project03.Utils.Constants;
 
 public class ConsoleDumper {
   /**
