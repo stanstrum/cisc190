@@ -5,6 +5,8 @@
 
 package com.stanstrum.lab08;
 
+import java.util.Scanner;
+
 import java.util.stream.Stream;
 import java.util.stream.Collectors;
 
@@ -14,6 +16,34 @@ import java.util.stream.Collectors;
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
 public class Lab08 {
+	/**
+	 * This method asks the user for input, retrieves that input,
+	 * and prints the inputted text formatted in proper case in
+	 * an infinite loop.
+	 */
+	public static void main(String[] args) {
+		// Create scanner for reading user input.
+		Scanner scanner = new Scanner(System.in);
+
+		// Infinite loop.
+		while (true) {
+			// Prompt the user for input.
+			System.out.print("Enter some text to be formatted in proper case: ");
+
+			// Get input from user.
+			String line = scanner.nextLine();
+
+			// Proper case the inputted text.
+			String properCased = properCase(line);
+
+			// Display the proper-cased text.
+			System.out.println(properCased);
+		}
+
+		// Unreachable code.
+		// scanner.close();
+	}
+
 	/**
 	 * A helper function that capitalizes the first
 	 * character in a word and makes the rest lowercase.
