@@ -1,64 +1,18 @@
-package com.stanstrum.project03;
+package com.stanstrum.project03.Dump;
 
 import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-/**
- * @author Stan Strum {@literal <stanleystrum@gmail.com>}
- */
-public class Dump {
-	// Self-explanatory.
-  private static final double KNOTS_PER_HOUR = 300d;
-	private static final int MINUTES_PER_HOUR = 60;
+import com.stanstrum.project03.Airport;
+import com.stanstrum.project03.Leg;
+import com.stanstrum.project03.PrettyPrint;
+import com.stanstrum.project03.Resources;
+import com.stanstrum.project03.Utils.Constants;
 
-	/**
-	 * Miles per nautical mile.
-	 */
-  private static double MI_PER_NMI = 1.15077945d;
-
-	/**
-	 * A method that dumps to the console a list of Legs that make up the trip.
-	 * @param legs
-	 */
-	public static void dumpInfoConsole(List<Leg> legs) {
-		System.out.println("Leg\tFrom\tTo\tDist\tTime (mins)");
-
-		double totalDistance = 0d;
-		double totalTimeMins = 0d;
-
-		// Iterate through the list with an index counter.
-		for (int i = 0; i < legs.size(); i++) {
-			Leg leg = legs.get(i);
-
-			Airport departure = leg.getDepartureAirport();
-			Airport arrival = leg.getArrivalAirport();
-			double distance = leg.getDistance() * MI_PER_NMI;
-
-			double timeMins = distance / KNOTS_PER_HOUR * (double)MINUTES_PER_HOUR;
-
-			// Print out the row.  I'm sure there's a nicer
-			// utility to format a string with many variables,
-			// but if it ain't broke ...
-			System.out.printf(
-				"%d\t%s\t%s\t%.0f\t%.0f\n",
-				// Leg number adjusted from zero-indexed.
-				i + 1,
-				departure.getIdentifier(), arrival.getIdentifier(),
-				distance, timeMins
-			);
-
-			// Accumulate totals.
-			totalDistance += distance;
-			totalTimeMins += timeMins;
-		}
-
-		// Print total row.
-		System.out.printf("Total\t\t\t%.0f\t%.0f\n", totalDistance, totalTimeMins);
-	}
-
-	public static void dumpInfoHTML(List<Leg> legs) {
+public class HTMLDumper {
+  public static void dump(List<Leg> legs) {
 		// Create date-time formatter for filling out
 		// the templates in the HTML resources.
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd LLLL yyyy");
@@ -93,8 +47,8 @@ public class Dump {
 				String departureName = departureAirport.getName();
 				String arrivalName = arrivalAirport.getName();
 
-				double time = leg.getDistance() / KNOTS_PER_HOUR * (double)MINUTES_PER_HOUR;
-				double distance = leg.getDistance() * MI_PER_NMI;
+				double time = leg.getDistance() / Constants.KNOTS_PER_HOUR * (double)Constants.MINUTES_PER_HOUR;
+				double distance = leg.getDistance() * Constants.MI_PER_NMI;
 
 				// Use pretty-printing code from prior labs.
 				String formattedTime = PrettyPrint.prettyPrintTime((int)time * PrettyPrint.SECONDS_PER_MINUTE);

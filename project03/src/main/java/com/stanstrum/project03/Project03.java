@@ -9,6 +9,9 @@ import java.util.List;
 
 import java.util.Scanner;
 
+import com.stanstrum.project03.Dump.ConsoleDumper;
+import com.stanstrum.project03.Dump.HTMLDumper;
+
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
  */
@@ -129,10 +132,10 @@ public class Project03 {
 		}
 
 		// Dump the info to the console.
-		Dump.dumpInfoConsole(legs);
+		ConsoleDumper.dump(legs);
 
 		// Dump the info to an HTML file.
-		Dump.dumpInfoHTML(legs);
+		HTMLDumper.dump(legs);
 
 		// Don't leak.
 		scanner.close();
