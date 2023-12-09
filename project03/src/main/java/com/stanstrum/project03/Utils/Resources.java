@@ -54,7 +54,7 @@ public class Resources {
 	}
 
 	public static boolean hasAirport(String code) {
-		return Resources.airports.containsKey(code);
+		return Resources.airports.containsKey(code.toLowerCase());
 	}
 
 	/**
