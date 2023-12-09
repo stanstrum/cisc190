@@ -12,7 +12,7 @@ public class ConsoleDumper {
    * @param legs
    */
   public static void dump(List<Leg> legs) {
-    System.out.println("Leg\tFrom\tTo\tDist\tTime (mins)");
+    System.out.println("Leg\tFrom\tTo\tDist (mi)\tSpeed (kt)\tTime (min)");
 
     double totalDistance = 0d;
     double totalTimeMins = 0d;
@@ -23,19 +23,22 @@ public class ConsoleDumper {
 
       Airport departure = leg.getDepartureAirport();
       Airport arrival = leg.getArrivalAirport();
-      double distance = leg.getDistance() * Constants.MI_PER_NMI;
 
-      double timeMins = distance / Constants.KNOTS_PER_HOUR * (double)Constants.MINUTES_PER_HOUR;
+      double timeMins = leg.getTime() / (double)Constants.SECS_PER_MIN;
+      double distance = leg.getDistance() * Constants.MI_PER_NMI;
 
       // Print out the row.  I'm sure there's a nicer
       // utility to format a string with many variables,
       // but if it ain't broke ...
       System.out.printf(
-        "%d\t%s\t%s\t%.0f\t%.0f\n",
+        "%d\t%s\t%s\t%.0f\t\t%.0f\t\t%.0f\n",
         // Leg number adjusted from zero-indexed.
         i + 1,
-        departure.getIdentifier(), arrival.getIdentifier(),
-        distance, timeMins
+        departure.getIdentifier(),
+        arrival.getIdentifier(),
+        distance,
+        leg.getSpeed(),
+        timeMins
       );
 
       // Accumulate totals.
@@ -44,6 +47,6 @@ public class ConsoleDumper {
     }
 
     // Print total row.
-    System.out.printf("Total\t\t\t%.0f\t%.0f\n", totalDistance, totalTimeMins);
+    System.out.printf("Total\t\t\t%.0f\t\t\t\t%.0f\n", totalDistance, totalTimeMins);
   }
 }

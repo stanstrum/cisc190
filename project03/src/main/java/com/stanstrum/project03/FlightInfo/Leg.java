@@ -1,4 +1,4 @@
-package com.stanstrum.project03;
+package com.stanstrum.project03.FlightInfo;
 
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}

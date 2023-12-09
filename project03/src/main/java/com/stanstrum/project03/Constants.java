@@ -4,6 +4,7 @@ public class Constants {
   // Self-explanatory.
   public static final double KNOTS_PER_HOUR = 300d;
   public static final int MINUTES_PER_HOUR = 60;
+  public static final int SECS_PER_MIN = 60;
 
   /**
    * Miles per nautical mile.

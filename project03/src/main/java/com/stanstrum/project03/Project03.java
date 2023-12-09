@@ -13,6 +13,10 @@ import com.stanstrum.project03.Dump.ConsoleDumper;
 import com.stanstrum.project03.Dump.HTMLDumper;
 import com.stanstrum.project03.FlightInfo.Airport;
 import com.stanstrum.project03.FlightInfo.Leg;
+import com.stanstrum.project03.Queriers.ArrivalLegAirportQuerier;
+import com.stanstrum.project03.Queriers.DepartureLegAirportQuerier;
+import com.stanstrum.project03.Queriers.LegSpeedQuerier;
+import com.stanstrum.project03.Queriers.LegsQuerier;
 import com.stanstrum.project03.Utils.Resources;
 
 /**
@@ -76,21 +80,18 @@ public class Project03 {
 		// Create a scanner to read user input.
 		Scanner scanner = new Scanner(System.in);
 
-		// The amount of legs in this trip.
-		int legCount = 0;
-		do {
-			// Prompt the user.
-			System.out.print("How many legs does your itinerary have? ");
+		// Initialize our queriers.  These objects have
+		// specific implementations that take care of
+		// printing the prompt, scanning input, verifying,
+		// and handling errors.  This allows this method
+		// to be a lot simpler.
+		LegsQuerier legsQuerier = new LegsQuerier(scanner);
+		DepartureLegAirportQuerier departureAirportQuerier = new DepartureLegAirportQuerier(scanner);
+		ArrivalLegAirportQuerier arrivalAirportQuerier = new ArrivalLegAirportQuerier(scanner);
+		LegSpeedQuerier speedQuerier = new LegSpeedQuerier(scanner);
 
-			// Get the amount of legs until a valid integer is found.
-			try {
-				// nextInt will crash if an invalid value is provided.
-				legCount = Integer.parseInt(scanner.nextLine(), 10);
-			} catch (Exception e) {
-				System.out.println("Try again ...");
-			}
-			// Ensure legs is non-negative and nonzero as a trip must have at least one leg.
-		} while (legCount <= 0);
+		// The amount of legs in this trip.
+		int legCount = legsQuerier.query();
 
 		// Create a list of Legs with a precomputed capacity.
 		List<Leg> legs = new ArrayList<>(legCount);
@@ -101,32 +102,32 @@ public class Project03 {
 
 		// For each leg ...
 		for (int i = 0; i < legCount; i++) {
+			int legNum = i + 1;
+
+			// Update the leg number for the queriers
+			// so that they show the correct value in the
+			// prompt.  This could be fixed with a slightly
+			// different interface, but the implementation
+			// would be very messy, and we would need
+			// to supply legNum to the query functions anyway.
+			departureAirportQuerier.setLegNum(legNum);
+			arrivalAirportQuerier.setLegNum(legNum);
+			speedQuerier.setLegNum(legNum);
+
 			// If we haven't got a departure airport yet, ask for one.
 			if (departureAirport == null) {
-				// Build the prompt for asking for a departure airport.
-				StringBuilder departureAirportBuilder = new StringBuilder();
-
-				// This will only happen the first time, so show the (e.g.) here.
-				departureAirportBuilder.append("Enter the identifier for the departure airport (e.g. SAN) for leg ");
-				departureAirportBuilder.append(i + 1);
-				departureAirportBuilder.append(": ");
-
-				// Get our departure airport.  Now, we only have to ask the
-				// next arrival airport each time.
-				departureAirport = askUserForAirport(scanner, departureAirportBuilder.toString());
+				// Get the first departure airport.
+				departureAirport = departureAirportQuerier.query();
 			}
 
 			// Get the arrival airport.
-			StringBuilder arrivalAirportBuilder = new StringBuilder();
-			arrivalAirportBuilder.append("Enter the identifier for the arrival airport for leg ");
-			arrivalAirportBuilder.append(i + 1);
-			arrivalAirportBuilder.append(": ");
+			Airport arrivalAirport = arrivalAirportQuerier.query();
 
-			Airport arrivalAirport = askUserForAirport(scanner, arrivalAirportBuilder.toString());
+			double speed = speedQuerier.query();
 
 			// Add the leg to the List, since the ArrayList
 			// is not autofilled to the capacity.
-			legs.add(new Leg(departureAirport, arrivalAirport));
+			legs.add(new Leg(departureAirport, arrivalAirport, speed));
 
 			// Set our last departure airport to our arrival airport.
 			// If we fly from San Diego to Austin, our next leg starts
