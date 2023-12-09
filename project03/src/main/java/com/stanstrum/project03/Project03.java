@@ -24,45 +24,6 @@ import com.stanstrum.project03.Utils.Resources;
  */
 public class Project03 {
 	/**
-	 * <p>
-	 *   A helper method that asks the user for an airport's IATA code.
-	 * </p>
-	 * <p>
-	 *   Note: this method relies on {@link Resources} already having successfully
-	 *   loaded resources.
-	 * </p>
-	 *
-	 * @param scanner The scanner to use to read input.
-	 * @param prompt The prompt to show the user.
-	 *
-	 * @return An {@link Airport} that corresponds to the provided code.
-	 *
-	 * @see {@link Resource#load}.
-	 */
-	private static Airport askUserForAirport(Scanner scanner, String prompt) {
-		Airport airport = null;
-
-		do {
-			// Show the prompt to the user.
-			System.out.printf(prompt);
-
-			// Get user input.
-			String iataCode = scanner.next();
-
-			// Get the airport by code -- will be null if none is found.
-			airport = Resources.getAirport(iataCode);
-
-			// If none was found by that code, show an error and repeat.
-			if (airport == null) {
-				System.out.printf("Unknown airport code: %s\n", iataCode.toUpperCase());
-			}
-		} while (airport == null);
-
-		// We found an airport; return it.
-		return airport;
-	}
-
-	/**
 	 * The main method of the itinerary program.
 	 */
 	public static void main(String[] args) {
