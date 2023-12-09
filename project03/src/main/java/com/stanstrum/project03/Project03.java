@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 import com.stanstrum.project03.Dump.ConsoleDumper;
 import com.stanstrum.project03.Dump.HTMLDumper;
+import com.stanstrum.project03.FlightInfo.Airport;
+import com.stanstrum.project03.FlightInfo.Leg;
 import com.stanstrum.project03.Utils.Resources;
 
 /**

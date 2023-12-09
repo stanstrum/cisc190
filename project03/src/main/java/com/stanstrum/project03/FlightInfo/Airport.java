@@ -1,4 +1,4 @@
-package com.stanstrum.project03;
+package com.stanstrum.project03.FlightInfo;
 
 /**
  * An object to represent a physical airport and some

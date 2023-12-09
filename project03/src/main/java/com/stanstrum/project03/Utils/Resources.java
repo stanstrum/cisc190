@@ -8,7 +8,7 @@ import org.apache.commons.io.IOUtils;
 
 import org.json.JSONObject;
 
-import com.stanstrum.project03.Airport;
+import com.stanstrum.project03.FlightInfo.Airport;
 
 /**
  * A helper class that takes care of reading
