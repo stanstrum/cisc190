@@ -1,4 +1,4 @@
-package com.stanstrum.project03;
+package com.stanstrum.project03.Utils;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -7,6 +7,8 @@ import java.nio.charset.StandardCharsets;
 import org.apache.commons.io.IOUtils;
 
 import org.json.JSONObject;
+
+import com.stanstrum.project03.Airport;
 
 /**
  * A helper class that takes care of reading

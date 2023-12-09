@@ -3,7 +3,6 @@ package com.stanstrum.project03.Utils;
 import java.util.Scanner;
 
 import com.stanstrum.project03.Airport;
-import com.stanstrum.project03.Resources;
 
 public abstract class LegAirportQuerier extends PreprocessedQuerier<String, Airport> {
     private int legNum;

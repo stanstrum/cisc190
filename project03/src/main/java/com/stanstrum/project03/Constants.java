@@ -1,4 +1,4 @@
-package com.stanstrum.project03.Utils;
+package com.stanstrum.project03;
 
 public class Constants {
   // Self-explanatory.

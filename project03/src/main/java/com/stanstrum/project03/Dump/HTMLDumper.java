@@ -8,8 +8,8 @@ import java.util.List;
 import com.stanstrum.project03.Airport;
 import com.stanstrum.project03.Constants;
 import com.stanstrum.project03.Leg;
-import com.stanstrum.project03.PrettyPrint;
-import com.stanstrum.project03.Resources;
+import com.stanstrum.project03.Utils.PrettyPrint;
+import com.stanstrum.project03.Utils.Resources;
 
 public class HTMLDumper {
   public static void dump(List<Leg> legs) {

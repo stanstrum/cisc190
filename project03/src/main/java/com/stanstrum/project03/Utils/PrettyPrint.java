@@ -1,4 +1,4 @@
-package com.stanstrum.project03;
+package com.stanstrum.project03.Utils;
 
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}

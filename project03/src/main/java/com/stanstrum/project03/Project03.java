@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import com.stanstrum.project03.Dump.ConsoleDumper;
 import com.stanstrum.project03.Dump.HTMLDumper;
+import com.stanstrum.project03.Utils.Resources;
 
 /**
  * @author Stan Strum {@literal <stanleystrum@gmail.com>}
