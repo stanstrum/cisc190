@@ -51,6 +51,10 @@ public class Resources {
 		Resources.loadHtml();
 	}
 
+	public static boolean hasAirport(String code) {
+		return Resources.airports.containsKey(code);
+	}
+
 	/**
 	 * Gets an {@link Airport} by IATA code from a local database
 	 * stored in and loaded from resources.
