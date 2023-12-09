@@ -4,17 +4,7 @@ import java.util.Scanner;
 
 import com.stanstrum.project03.FlightInfo.Airport;
 
-public abstract class LegAirportQuerier extends PreprocessedQuerier<String, Airport> {
-  private int legNum;
-
-  public final void setLegNum(int legNum) {
-    this.legNum = legNum;
-  }
-
-  protected final int getLegNum() {
-    return this.legNum;
-  }
-
+public abstract class LegAirportQuerier extends LegQuerier<String, Airport> {
   public LegAirportQuerier(Scanner scanner) {
     super(scanner);
   }
