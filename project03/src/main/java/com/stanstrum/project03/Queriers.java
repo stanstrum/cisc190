@@ -37,7 +37,7 @@ public class Queriers {
     @Override
     protected void showPrompt() {
       System.out.printf(
-        "Enter the identifier for the departure airport (e.g. SAN) for leg %d: ",
+        "Enter the identifier for the arrival airport for leg %d: ",
         this.getLegNum()
       );
     }
@@ -51,7 +51,7 @@ public class Queriers {
     @Override
     protected void showPrompt() {
       System.out.printf(
-        "Enter the identifier for the arrival airport for leg %d: ",
+        "Enter the identifier for the departure airport (e.g. SAN) for leg %d: ",
         this.getLegNum()
       );
     }
