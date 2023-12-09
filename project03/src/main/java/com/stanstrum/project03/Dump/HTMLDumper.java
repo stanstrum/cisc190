@@ -47,11 +47,14 @@ public class HTMLDumper {
 				String departureName = departureAirport.getName();
 				String arrivalName = arrivalAirport.getName();
 
-				double time = leg.getDistance() / Constants.KNOTS_PER_HOUR * (double)Constants.MINUTES_PER_HOUR;
+				double speed = leg.getSpeed();
+				String formattedSpeed = String.format("%.0f", speed);
+
+				double time = leg.getTime();
 				double distance = leg.getDistance() * Constants.MI_PER_NMI;
 
 				// Use pretty-printing code from prior labs.
-				String formattedTime = PrettyPrint.prettyPrintTime((int)time * PrettyPrint.SECONDS_PER_MINUTE);
+				String formattedTime = PrettyPrint.prettyPrintTime((int)time);
 				String formattedDistance = PrettyPrint.prettyPrintNumber((int)distance);
 
 				// Replace the template tags.
@@ -62,6 +65,7 @@ public class HTMLDumper {
 					.replace("%departureName", departureName)
 					.replace("%arrivalName", arrivalName)
 					.replace("%formattedTime", formattedTime)
+					.replace("%speed", formattedSpeed)
 					.replace("%distance", formattedDistance);
 
 				// Write the filled-out HTML.
@@ -80,12 +84,8 @@ public class HTMLDumper {
 			Leg last = legs.get(legs.size() - 1);
 
 			// Pretty print numbers.
-			String formattedTotalTime = PrettyPrint.prettyPrintTime(
-				(int)totalTime * PrettyPrint.SECONDS_PER_MINUTE
-			);
-			String fomrattedTotalDistance = PrettyPrint.prettyPrintNumber(
-				(int)totalDistance
-			);
+			String formattedTotalTime = PrettyPrint.prettyPrintTime((int)totalTime);
+			String fomrattedTotalDistance = PrettyPrint.prettyPrintNumber((int)totalDistance);
 
 			// Replace template tags for the foot section.
 			String foot = Resources.getHtmlFoot()
