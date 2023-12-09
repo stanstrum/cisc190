@@ -9,11 +9,13 @@ import com.stanstrum.project03.FlightInfo.Leg;
 public class ConsoleDumper {
   /**
    * A method that dumps to the console a list of Legs that make up the trip.
-   * @param legs
+   *
+   * @param legs The flights that make up the itinerary.
    */
   public static void dump(List<Leg> legs) {
     System.out.println("Leg\tFrom\tTo\tDist (mi)\tSpeed (kt)\tTime (min)");
 
+    // Accumulated values to show in totals row.
     double totalDistance = 0d;
     double totalTimeMins = 0d;
 
@@ -24,7 +26,9 @@ public class ConsoleDumper {
       Airport departure = leg.getDepartureAirport();
       Airport arrival = leg.getArrivalAirport();
 
+      // getTime returns seconds.
       double timeMins = leg.getTime() / (double)Constants.SECS_PER_MIN;
+      // getDistance retursn knots.
       double distance = leg.getDistance() * Constants.MI_PER_NMI;
 
       // Print out the row.  I'm sure there's a nicer

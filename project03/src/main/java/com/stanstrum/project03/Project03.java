@@ -123,6 +123,7 @@ public class Project03 {
 			// Get the arrival airport.
 			Airport arrivalAirport = arrivalAirportQuerier.query();
 
+			// Get the speed in knots.
 			double speed = speedQuerier.query();
 
 			// Add the leg to the List, since the ArrayList

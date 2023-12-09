@@ -7,6 +7,10 @@ import com.stanstrum.project03.Utils.LegQuerier;
 import com.stanstrum.project03.Utils.Querier;
 
 public class Queriers {
+  /**
+   * An implementation of Querier that asks for the amount of
+   * legs an itinerary has.
+   */
   public static class LegsQuerier extends Querier<Integer> {
     LegsQuerier(Scanner scanner) {
       super(scanner);
@@ -30,6 +34,10 @@ public class Queriers {
     }
   }
 
+  /**
+   * An implementation of {@link LegAirportQuerier} that
+   * asks for the arrival airport for a leg.
+   */
   public static class ArrivalLegAirportQuerier extends LegAirportQuerier {
     public ArrivalLegAirportQuerier(Scanner scanner) {
       super(scanner);
@@ -44,6 +52,10 @@ public class Queriers {
     }
   }
 
+  /**
+   * An implementation of {@link LegAirportQuerier} that
+   * asks for the departure airport for a leg.
+   */
   public static class DepartureLegAirportQuerier extends LegAirportQuerier {
     public DepartureLegAirportQuerier(Scanner scanner) {
 			super(scanner);
@@ -58,6 +70,10 @@ public class Queriers {
     }
   }
 
+  /**
+   * An implementation of {@link LegQuerier} that asks
+   * for the speed in knots for a leg.
+   */
   public static class LegSpeedQuerier extends LegQuerier<Double, Double> {
     public LegSpeedQuerier(Scanner scanner) {
       super(scanner);

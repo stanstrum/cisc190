@@ -53,6 +53,18 @@ public class Resources {
 		Resources.loadHtml();
 	}
 
+	/**
+	 * <p>
+	 *   Checks whether an airport is known by the provided code.
+	 * </p>
+	 * <p>
+	 *   Note: the map is checked case-insensitively.
+	 * </p>
+	 *
+	 * @param code The IATA identifier for the airport.
+	 *
+	 * @return Whether the airport is in the database.
+	 */
 	public static boolean hasAirport(String code) {
 		return Resources.airports.containsKey(code.toLowerCase());
 	}

@@ -12,12 +12,19 @@ import com.stanstrum.project03.Utils.PrettyPrint;
 import com.stanstrum.project03.Utils.Resources;
 
 public class HTMLDumper {
+	/**
+	 * This method dumps the provided itinerary (list of legs of flights)
+	 * to an HTML file.
+	 *
+	 * @param legs The flights in this itinerary
+	 */
   public static void dump(List<Leg> legs) {
 		// Create date-time formatter for filling out
 		// the templates in the HTML resources.
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd LLLL yyyy");
 		String date = dtf.format(LocalDateTime.now());
 
+		// Accumulated values to show in totals row.
 		double totalDistance = 0d;
 		double totalTime = 0d;
 
